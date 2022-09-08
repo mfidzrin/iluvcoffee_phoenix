@@ -21,9 +21,11 @@ defmodule IluvcoffeePhoenixWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", IluvcoffeePhoenixWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", IluvcoffeePhoenixWeb do
+    pipe_through :api
+
+    get "/", PageController, :hello_world
+  end
 
   # Enables LiveDashboard only for development
   #
