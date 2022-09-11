@@ -24,7 +24,9 @@ defmodule IluvcoffeePhoenixWeb.Router do
   scope "/api", IluvcoffeePhoenixWeb do
     pipe_through :api
 
-    get "/", PageController, :hello_world
+    get "/coffees", CoffeeController, :get_all
+
+    get "/coffees/:id", CoffeeController, :get_one
   end
 
   # Enables LiveDashboard only for development
